@@ -1,5 +1,5 @@
 # PALEOMIX Wrangle
- Script to compile summaries from PALEOMIX (https://paleomix.readthedocs.io/en/latest/#) into one file.
+ Script to compile summaries from PALEOMIX (https://paleomix.readthedocs.io/en/stable/) into one file.
 
 ## Use
 1. Path to the file with list of samples.
