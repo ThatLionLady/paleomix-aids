@@ -4,6 +4,8 @@ SAMPLES=$(<$1) 	# /PATH/TO/List-of-Samples.txt
 dir=$2 			# /PATH/OF/MAIN/DIRECTORY/
 sumdir=$3 		# /PATH/WITH/PALEOMIX/SUMMARIES/
 
+echo "Compiling PALEOMIX summaries"
+
 echo -e "Sample \t lib_type \t seq_reads_pairs \t seq_trash_pe_1 \t seq_trash_pe_1_frac \t seq_trash_pe_2 \t seq_trash_pe_2_frac \t seq_collapsed \t seq_collapsed_frac \t seq_retained_reads \t seq_retained_nts \t seq_retained_length \t hits_raw \t hits_raw_frac \t hits_clonality \t hits_unique \t hits_unique_frac \t hits_coverage \t hits_length" >> ${dir}PALEOMIX-summaries
 
 for sample in $SAMPLES; do
