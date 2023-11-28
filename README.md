@@ -21,7 +21,7 @@ ln -s paleomix-wrangle.sh /usr/local/bin/paleomix-wrangle
 **Adds samples to the end of the required makefile** for data in the format: ProjectID_SAMPLE_*_L00#_R{PAIR}_001.fastq.gz
 
 ```sh
-paleomix-makefile-add-samples.sh 1 2 3
+paleomix-makefile-add-samples 1 2 3
 ```
 
 1. Path to the file with list of samples.
