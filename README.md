@@ -3,32 +3,42 @@
 - [Add Samples to Makefile](#add-samples-to-makefile)
 - [PALEOMIX Wrangle](#paleomix-wrangle)
 
+```sh
+git clone https://github.com/ThatLionLady/paleomix-aids.git
+cd paleomix-aids
+
+# Add Samples to Makefile
+chmod +x paleomix-makefile-add-samples.sh
+ln -s paleomix-makefile-add-samples.sh /usr/local/bin/paleomix-makefile-add-samples
+
+# PALEOMIX Wrangle
+chmod +x paleomix-wrangle.sh
+ln -s paleomix-wrangle.sh /usr/local/bin/paleomix-wrangle
+```
+
 # Add Samples to Makefile
 
-**Adds samples to the end of the makefile.**
+**Adds samples to the end of the required makefile** for data in the format: ProjectID_SAMPLE_*_L00#_R{PAIR}_001.fastq.gz
 
 ```sh
-cd /makefile/directory/
-paleomix bam makefile > makefile.yaml
-bash paleomix-makefile-add-samples.sh 1 2
+paleomix-makefile-add-samples.sh 1 2 3
 ```
 
 1. Path to the file with list of samples.
 2. Path to directory with FASTQs.
+3. Project ID
 
-- I haven't gotten around to making the script completely universal so it requires some editing:
-  - be sure to include the proper number of lanes
-  - edit `${READS}` to specify read data using proper wildcards
-    - ex. `_*_L001_R{Pair}_001.fastq.gz`: see [documentation](https://paleomix.readthedocs.io/en/stable/bam_pipeline/usage.html) for details
+- This isn't FULLY universal:
+  - see [documentation](https://paleomix.readthedocs.io/en/stable/bam_pipeline/usage.html) for details on use of wildcards if changing because your data has a different format.
 
-*Additional edits to the makefile may be needed before it's ready to run but this script is far better than having to add potentially hundreds of samples to the makefile by hand.*
+*Additional edits to the parameters within the makefile ARE needed before it's ready to run but this script is far better than having to add potentially hundreds of samples to the makefile by hand.*
 
 # PALEOMIX Wrangle
 
 **Compiles summaries into one file.**
 
 ```sh
-bash paleomix-wrangle.sh 1 2 3
+paleomix-wrangle 1 2 3
 ```
 
 1. Path to the file with list of samples.
