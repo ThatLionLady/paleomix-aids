@@ -9,11 +9,13 @@ cd paleomix-aids
 
 # Add Samples to Makefile
 chmod +x paleomix-makefile-add-samples.sh
-ln -s paleomix-makefile-add-samples.sh /usr/local/bin/paleomix-makefile-add-samples
+ln -s /PATH/TO/paleomix-aids/paleomix-makefile-add-samples.sh /usr/local/bin/paleomix-makefile-add-samples
+which paleomix-makefile-add-samples
 
 # PALEOMIX Wrangle
 chmod +x paleomix-wrangle.sh
-ln -s paleomix-wrangle.sh /usr/local/bin/paleomix-wrangle
+ln -s /PATH/TO/paleomix-aids/paleomix-wrangle.sh /usr/local/bin/paleomix-wrangle
+which paleomix-wrangle
 ```
 
 # Add Samples to Makefile
