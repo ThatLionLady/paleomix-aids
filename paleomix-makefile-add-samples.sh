@@ -1,14 +1,22 @@
 #!/bin/sh
 
+# Check if command-line arguments are provided
+if [ "$#" -ne 3 ]; then
+    echo "This renames chromosomes in BAMs to a rename-chr-pattern.txt file in the working directory."
+    echo "Usage: $0 <SAMPLE.list> <DATA> <ProjectID>"
+    echo ""
+    echo "Arguments:"
+    echo "SAMPLE.list   = Path to the list of samples"
+    echo "DATA          = Path to Fastqs"
+    echo "ProjectID     = Project number or prefix"
+    exit 1
+fi
+
 ## first run:
+
 paleomix bam makefile > makefile.yaml
 
-## then edit parameteres and 
-## run this script to add samples to the end of the paleomix makefile
-
-## 1 = /PATH/TO/SAMPLE.list
-## 2 = /PATH/TO/DATA/
-## 3 = ProjectID
+## then add samples to the end of the paleomix makefile:
 
 for SAMPLE in $(<$1); do
 
